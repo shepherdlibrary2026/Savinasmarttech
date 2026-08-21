@@ -1,0 +1,7 @@
+{
+  "name": "Savina Learning Center - Multi-Tenant K-12 School Management & Online Learning for Liberia",
+  "description": "Multi-tenant SaaS school management and offline-first e-learning platform engineered for K-12 schools in Liberia and West Africa with low-bandwidth modes, MTN/Orange Mobile Money, MoE curriculum, and dual kid/high-school interfaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

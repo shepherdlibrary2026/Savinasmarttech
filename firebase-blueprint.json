@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["platform_admin", "school_admin", "teacher", "student", "parent", "bursar"] },
+        "schoolId": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "role", "schoolId"]
+    },
+    "School": {
+      "title": "School",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "county": { "type": "string" },
+        "district": { "type": "string" },
+        "moeCode": { "type": "string" },
+        "principalName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "tier": { "type": "string" },
+        "studentCount": { "type": "number" },
+        "teacherCount": { "type": "number" }
+      },
+      "required": ["id", "name", "county", "moeCode"]
+    },
+    "AIGeneration": {
+      "title": "AIGeneration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["chat", "search", "music", "image", "video", "transcription", "lesson_plan"] },
+        "userId": { "type": "string" },
+        "prompt": { "type": "string" },
+        "output": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "type", "userId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "User profiles and permissions across the platform"
+    },
+    "schools": {
+      "schema": "School",
+      "description": "Educational institutions registered in the multi-tenant system"
+    },
+    "ai_generations": {
+      "schema": "AIGeneration",
+      "description": "Logged AI outputs including search, live voice, music, images, and videos"
+    }
+  }
+}
